@@ -6,14 +6,14 @@
 	<script>
 		(function(){
 			function fix() {
-				let screenWidth = document.documentElement.clientWidth;
+				let screenWidth = window.screen.width;
 				let fixWdith = 750;
 				let scale = screenWidth / fixWdith;
 				console.log(screenWidth, scale);
-				document.querySelector('meta[name="viewport"]').setAttribute('content','initial-scale=' + scale + ', maximum-scale=' + scale + ', minimum-scale=' + scale + ', user-scalable=no');
+				document.querySelector('meta[name="viewport"]').setAttribute('content','width='+ fixWdith +', initial-scale=' + scale + ', maximum-scale=' + scale + ', minimum-scale=' + scale + ', user-scalable=no');
 			}
 			fix();
-			// window.addEventListener("resize", fix);
+			window.addEventListener("resize", fix);
 			window.addEventListener('pageshow', function (e) {
 				console.log(e.persisted);
 			    if (e.persisted) {
