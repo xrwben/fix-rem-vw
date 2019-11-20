@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>viewport布局</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+	<style type="text/css">
+		/* 
+			100vw 设计图750px  将设计图分为100份  1vw=7.5px => 1px=0.1333333333vw => 100px=13.33333333vw  
+		    让1rem=100px  即font-size=13.33333333vw 如果设计图不是750另算 
+		 */
+		html {
+			font-size: 13.33333333vw;
+		}
+		@media screen and (min-width: 750px) {
+			html {
+				font-size: 100px;
+			}
+		}
+	</style>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		body {
+			max-width: 750px;
+			margin: 0 auto;
+			background: #eee;
+		}
+		.girls {
+			width: 100%;
+			height: 2.5rem;
+			display: flex;
+		}
+		.girls img:nth-child(1) {
+			width: 5rem;
+			height: 2.5rem;
+		}
+		.girls img:nth-child(2) {
+			width: 2.5rem;
+			height: 2.5rem;
+		}
+		.goods {
+			width: 100%;
+			height: 2.5rem;
+			display: flex;
+		}
+		.goods img {
+			width: 2.5rem;
+			height: 2.5rem;
+		}
+		img {
+			display: block;
+		}
+	</style>
+</head>
+<body>
+	<div class="app">
+		<div class="girls">
+			<img src="./images/5.jpg">
+			<img src="./images/4.jpg">
+		</div>
+		<div class="goods">
+			<img src="./images/1.jpg">
+			<img src="./images/2.jpg">
+			<img src="./images/3.jpg">
+		</div>
+	</div>
+</body>
+</html>
